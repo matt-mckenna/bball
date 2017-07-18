@@ -16,13 +16,13 @@ pip = read.csv('pip.csv', header=T)
 
 
 plot(y=kobe$eff, x=kobe$inx)
-#kobe$year=as.numeric(substr(dat$SEASON_ID,2,5))
-#kobepat = filter (kobe, filter = c(1/8, 1/4, 1/4, 1/4, 1/8), sides=2)
-#duncpat = filter (dunc, filter = c(1/8, 1/4, 1/4, 1/4, 1/8), sides=2)
-#pppat =filter (pp, filter = c(1/8, 1/4, 1/4, 1/4, 1/8), sides=2)
+kobe$year=as.numeric(substr(dat$SEASON_ID,2,5))
+kobepat = filter (kobe, filter = c(1/8, 1/4, 1/4, 1/4, 1/8), sides=2)
+duncpat = filter (dunc, filter = c(1/8, 1/4, 1/4, 1/4, 1/8), sides=2)
+pppat =filter (pp, filter = c(1/8, 1/4, 1/4, 1/4, 1/8), sides=2)
 
-#plot (x=kobe$X, y=kobe$eff,type= "b", main = "moving average annual trend")
-#lines (trendpattern)
+plot (x=kobe$X, y=kobe$eff,type= "b", main = "moving average annual trend")
+lines (trendpattern)
 kobesm=smooth.spline(y=kobe$eff, x=kobe$inx)
 
 dunc.sm=smooth.spline(x=dunc$inx, y=dunc$eff)
